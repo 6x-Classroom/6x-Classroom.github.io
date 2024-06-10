@@ -261,7 +261,8 @@
       <p class="faq-title"><i class="fa-regular fa-circle-check"></i> Answer:</p>
       <p class="faq-qna">This mostly follows the same principles as our previous answer. If you have a feature that you
         are wanting to be added, please use our <a href="contact.html">contact form</a> to reach us. Alternatively, you
-        can also visit the <a href="https://github.com/6x-Classroom/6x-Classroom.github.io">project's GitHub page</a>, and submit
+        can also visit the <a href="https://github.com/6x-Classroom/6x-Classroom.github.io">project's GitHub page</a>,
+        and submit
         an issue.</p>
     </div>
   </center>
@@ -406,7 +407,9 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
-        }, function (err) {
+          console.log('Service worker registered successfully:', registration);
+        }).catch(function (err) {
+          console.error('Service worker registration failed:', err);
         });
       });
     }
