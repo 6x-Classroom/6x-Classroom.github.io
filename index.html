@@ -401,6 +401,17 @@
       delay: anime.stagger(100)
     });
   </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        }, function (err) {
+        });
+      });
+    }
+  </script>
+
 </body>
 
 </html>
