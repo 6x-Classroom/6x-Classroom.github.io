@@ -1,0 +1,327 @@
+<!--
+ ▄▀▀▄▀▀▀▄  ▄▀▀▄▀▀▀▄  ▄▀▀▀▀▄         ▄█  ▄▀▀█▄▄▄▄  ▄▀▄▄▄▄   ▄▀▀▀█▀▀▄ 
+█   █   █ █   █   █ █      █  ▄▀▀▀█▀ ▐ ▐  ▄▀   ▐ █ █    ▌ █    █  ▐ 
+▐  █▀▀▀▀  ▐  █▀▀█▀  █      █ █    █      █▄▄▄▄▄  ▐ █      ▐   █     
+   █       ▄▀    █  ▀▄    ▄▀ ▐    █      █    ▌    █         █      
+ ▄▀       █     █     ▀▀▀▀     ▄   ▀▄   ▄▀▄▄▄▄    ▄▀▄▄▄▄▀  ▄▀       
+█         ▐     ▐               ▀▀▀▀    █    ▐   █     ▐  █         
+▐                                       ▐        ▐        ▐         
+ ▄▀▀▄ ▄▄   ▄▀▀▄ ▄▀▀▄  ▄▀▀█▄▄                                        
+█  █   ▄▀ █   █    █ ▐ ▄▀   █                                       
+▐  █▄▄▄█  ▐  █    █    █▄▄▄▀                                        
+   █   █    █    █     █   █                                        
+  ▄▀  ▄▀     ▀▄▄▄▄▀   ▄▀▄▄▄▀                                        
+ █   █               █    ▐                                         
+ ▐   ▐               ▐                                              
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Display-->
+		<title>Project-Hub | Settings</title>
+		<link rel="icon" href="favicon.svg">
+		<!--Stylesheets-->
+		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="page_styles/settings.css"> <!--Page-Specific-->
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+		<link rel="stylesheet" href="hover.css"> <!--Hover.CSS Library-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"> <!--AOS Library-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="https://kit.fontawesome.com/4139823eac.js" crossorigin="anonymous"></script>
+		<script src="icon_changer.js"></script> 
+		<!--Meta-->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Google Analytics-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9KJ1XPKLF"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-M9KJ1XPKLF');
+        </script>
+		<!--Scripts-->
+		<script src="startupScript.js"></script>
+	</head>
+	<body>
+		<!--Navbar Start-->
+        <div class="nav" style="display: flex;">
+            <button class="hvr-underline-from-center"
+                data-aos="fade-down"
+                data-aos-delay="50"
+                data-aos-duration="1100"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                onclick="window.location.href='index.html'"
+                style="cursor:pointer"><a>Home</a></button>
+            <button class="hvr-underline-from-center"
+                data-aos="fade-down"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                onclick="window.location.href='games.html'"
+                style="cursor:pointer"><a>Games</a></button>
+            <button class="hvr-underline-from-center"
+                data-aos="fade-down"
+                data-aos-delay="50"
+                data-aos-duration="900"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                onclick="window.location.href='apps.html'"
+                style="cursor:pointer"><a>Apps</a></button>
+            <button class="hvr-underline-from-center"
+                data-aos="fade-down"
+                data-aos-delay="50"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                onclick="window.location.href='contact.html'"
+                style="cursor:pointer"><a>Contact</a></button>
+            <div id="mobile-removables">
+                <button class="hvr-underline-from-center active"
+                    data-aos="fade-down"
+                    data-aos-delay="50"
+                    data-aos-duration="700"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                    onclick="window.location.href='settings.html'"
+                    style="cursor:pointer"><a>Settings</a></button>
+                <button class="hvr-underline-from-center"
+                    data-aos="fade-down"
+                    data-aos-delay="50"
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                    onclick="window.location.href='https://github.com/unbl0ck/unbl0ck.github.io'"
+                    style="cursor:pointer"><a>GitHub</a></button>
+            </div>
+        </div>
+		<!--Navbar End-->
+
+		<!--Header Image-->
+		<img src="img/header.png" alt="Image couldn't load." class="img-header">
+
+		<!--Tab Changer-->
+		<div class="wide-box" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		    <h2 style="font-weight:bold;">Favicon Changer</h2>
+		    <center>
+				<button class="icon-btn"><img src="https://i.ibb.co/kDxcVDx/canvas.png" id="favicon-button-1" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/YPyTYbJ/google-classroom.png" id="favicon-button-2" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/JcgBjC1/google-drive.png" id="favicon-button-3" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/n62414w/google-slides.png" id="favicon-button-4" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/44MjCj9/google-docs.png" id="favicon-button-5" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/5TfSsHK/google-mail.png" id="favicon-button-6" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/6XW9nQ6/google.png" id="favicon-button-7" onclick="updateFavicon(this.id)"></button>
+				<button class="icon-btn"><img src="https://i.ibb.co/CKrRjCG/turnitin.png" id="favicon-button-8" onclick="updateFavicon(this.id)"></button><br>
+				<button class="reset-btn" onclick="updateFavicon(this.querySelector('img').id)"><img src="https://i.ibb.co/KW8NVz7/default.png" id="favicon-button-9">Reset</button>
+
+				<!--Tab Name Changer-->
+				<h2 style="font-weight:bold; padding-top: 2vw;">Tab Name Changer</h2>
+				<form>
+					<input class="input-box" type="text" id="newTitle" placeholder="Blank for Default"><br>
+					<button class="reset-btn-text" onclick="changeTitle()">Submit</button>
+				</form>
+		    </center>
+		</div>
+
+		<!--Container for Ads + Table-->
+		<div class="ad-container">
+			<!--Ad Segment Start-->
+			<script>
+				var afg={};afg.u=6328;afg.s=5;
+				document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");
+			</script>
+			<!--Ad Segment End-->
+
+			<table class="w3-center w3-border table" style="background-color: snow; margin-bottom: 4vw; margin-top: 1vw;">
+				<thead>
+					<th>Game Name</th>
+					<th>Source</th>
+					<th>Game Name</th>
+					<th>Source</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="https://github.com/ozh/cookieclicker">Cookie Clicker</a></td>
+						<td><a href="https://github.com/ozh/cookieclicker">ozh (GitHub)</a></td>
+						<td><a href="https://github.com/ObjectifLibre/2048">2048</a></td>
+						<td><a href="https://github.com/ObjectifLibre/2048">ObjectifLibre (GitHub)</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/robertkleffner/mariohtml5">Mario</a></td>
+						<td><a href="https://github.com/robertkleffner/mariohtml5">robertkleffner (GitHub)</a></td>
+						<td><a href="https://github.com/noanonoa/flappy-bird">Flappy Bird</a></td>
+						<td><a href="https://github.com/noanonoa/flappy-bird">noanonoa (GitHub)</a></td>
+					</tr>
+					<tr>
+						<td>World's Hardest Game</td>
+						<td>Stephen Critoph</td>
+						<td>The Impossible Quiz</td>
+						<td>Splapp-Me-Do</td>
+					</tr>
+					<tr>
+						<td>Breaking The Bank</td>
+						<td>PuffballsUnited</td>
+						<td>Escaping The Prison</td>
+						<td>PuffballsUnited</td>
+					</tr>
+					<tr>
+						<td>Stealing The Diamond</td>
+						<td>PuffballsUnited</td>
+						<td>Infiltrating The Airship</td>
+						<td>PuffballsUnited</td>
+					</tr>
+					<tr>
+						<td>Fleeing The Complex</td>
+						<td>PuffballsUnited</td>
+						<td><a href="https://github.com/cgolden15/Slope-Game">Slope</a></td>
+						<td><a href="https://github.com/cgolden15/Slope-Game">cgolden15 (GitHub)</a></td>
+					</tr>
+					<tr>
+						<td>Riddle School 1</td>
+						<td>Jonochrome</td>
+						<td>Riddle School 2</td>
+						<td>Jonochrome</td>
+					</tr>
+					<tr>
+						<td>Riddle School 3</td>
+						<td>Jonochrome</td>
+						<td>Riddle School 4</td>
+						<td>Jonochrome</td>
+					</tr>
+					<tr>
+						<td>Riddle School 5</td>
+						<td>Jonochrome</td>
+						<td>Riddle Transfer 1</td>
+						<td>Jonochrome</td>
+					</tr>
+					<tr>
+						<td>Riddle Transfer 2</td>
+						<td>Jonochrome</td>
+						<td><a href="https://github.com/jeroenverfallie/ggo13-transcube">Transcube</a></td>
+						<td><a href="https://github.com/jeroenverfallie/ggo13-transcube">jeroenverfallie (GitHub)</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://classic.minecraft.net/">Minecraft: Classic</a></td>
+						<td><a href="https://classic.minecraft.net/">Mojang Studios (Minecraft.Net)</a></td>
+						<td>MotoX3M</td>
+						<td>MadPuffers</td>
+					</tr>
+					<tr>
+						<td>MotoX3M 2</td>
+						<td>MadPuffers</td>
+						<td>Pokemon: Fire Red</td>
+						<td>GameFreak & Nintendo</td>
+					</tr>
+					<tr>
+						<td>Pokemon: Emerald</td>
+						<td>GameFreak & Nintendo</td>
+						<td>Monopoly</td>
+						<td>HasBro & Atari</td>
+					</tr>
+					<tr>
+						<td>Spyro Adventure</td>
+						<td>Digital Eclipse</td>
+						<td>Street Fighter 2</td>
+						<td>Capcom</td>
+					</tr>
+					<tr>
+						<td>Subway Surfers</td>
+						<td>Sybo</td>
+						<td>Google Dino</td>
+						<td>Google</td>
+					</tr>
+					<tr>
+						<td>FNaF 4</td>
+						<td>Scott Cawthon</td>
+						<td>Crossy Road</td>
+						<td>Hipster Whale</td>
+					</tr>
+					<tr>
+						<td>Cut the Rope</td>
+						<td>ZeptoLab</td>
+						<td>Stack</td>
+						<td>Crazy Bulk</td>
+					</tr>
+					<tr>
+						<td>Duck Life 1/2/3/4</td>
+						<td>Wix Games</td>
+						<td>Super Mario 64</td>
+						<td>Nintendo</td>
+					</tr>
+					<tr>
+						<td>Learn to Fly 1/2</td>
+						<td>Light Bringer Games</td>
+					</tr>
+					<tr id="incomplete">
+						<td>GameName</td>
+						<td>Author</td>
+						<td>GameName</td>
+						<td>Author</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!--Ad Segment Start-->
+			<script>
+				var afg={};afg.u=6328;afg.s=5;
+				document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");
+			</script>
+			<!--Ad Segment End-->
+		</div>
+
+		<!--Generalized License-->
+		<center>
+			<h3 style="font-weight:bold;">Copying Rights:</h3>
+			<p>GNU General Public License v3.0</p>
+			<p>As a short summary, you can take any part of this website. However, you must:</p>
+			<p>Credit this site; State all significant changes; Use the same license.</p>
+			<p>Please head to the GitHub page for more info.</p>
+		</center>
+
+		<!--Footer Start-->
+        <footer class="footer">
+			<div class="footer-about">
+			  <p>Welcome to Project Hub, your ultimate destination for tailored unblocked games! With over 60 games and counting, we are committed to providing you with a personalized gaming experience that suits your preferences and interests. Our site is constantly updated with new additions to ensure a fresh and exciting selection of games. We highly value user feedback and actively incorporate it to enhance your gaming journey. Get ready to embark on a thrilling adventure as you explore the world of Project Hub, where every game is tailored to you. Let the fun begin!</p>
+			</div>
+			<p>Christian Santangelo <i class="fa-regular fa-copyright"></i></p>
+			<p>Disclaimer: This site should not be used during school/work, and I am not responsible for the users on this site.</p>
+			<div class="footer-link">
+				<a href="https://github.com/unbl0ck">GitHub Profile</a>
+				<a href="privacy.html">Privacy Notice</a>
+			</div>
+		</footer>
+		<!--Footer End-->
+		
+		<!--Save Favicon & Title-->
+		<script>
+		    function changeTitle() {
+				var newTitle = document.getElementById("newTitle").value;
+				if (newTitle === "") {
+					localStorage.removeItem("title");
+				} else {
+					localStorage.setItem("title", newTitle);
+					document.title = newTitle;
+				}
+
+				window.location.reload();
+		    }
+
+		    function updateFavicon(id) {
+				var faviconUrl = document.getElementById(id).src;
+				localStorage.setItem("faviconUrl", faviconUrl);
+
+				window.location.reload();
+		    }
+		</script>
+
+		<!--AOS Library-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+	</body>
+</html>
