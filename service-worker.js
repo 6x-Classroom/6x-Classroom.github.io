@@ -109,10 +109,10 @@ self.addEventListener('install', function (event) {
                 console.log('Opened cache');
                 return cache.addAll(urlsToCache)
                     .then(function () {
-                        // console.log('Preloaded and cached URLs:');
+                        console.log('Preloaded and cached URLs:');
                         return Promise.all(urlsToCache.map(url => {
                             return cache.match(url).then(response => {
-                                // console.log('- ' + url);
+                                console.log('- ' + url);
                                 return response;
                             });
                         }));
