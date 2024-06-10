@@ -1,63 +1,83 @@
+// Service Worker Script
+
+// Define the cache name
 const CACHE_NAME = 'project-hub-cache-v1';
+
+// Define the URLs to cache
 const urlsToCache = [
     '/',
     '/index.html',
-    '/games.html',
-    '/apps.html',
-    '/contact.html',
-    '/settings.html',
     '/stylesheet.css',
-    '/page_styles/games.css',
-    'https://www.w3schools.com/w3css/4/w3.css',
-    'https://fonts.googleapis.com/css?family=Montserrat&display=swap',
-    '/hover.css',
-    'https://unpkg.com/aos@next/dist/aos.css',
-    'https://fonts.googleapis.com/icon?family=Material+Icons',
-    'https://kit.fontawesome.com/4139823eac.js',
-    '/img/header.png',
-    '/games/img/cookclck.png',
-    '/games/img/2048.png',
-    '/games/img/mario.png',
-    '/startupScript.js',
-    '/cookie/index.html',
-    '/games/2048/index.html',
-    '/games/mario/main.html'
+    // Add other specific URLs you want to cache here
+    '/games/*' // Add the wildcard pattern to cache all URLs under /games/
 ];
 
-// Install the service worker and cache the URLs
-self.addEventListener('install', event => {
+// Install event
+self.addEventListener('install', function (event) {
+    // Perform installation steps
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => {
+            .then(function (cache) {
+                console.log('Opened cache');
                 return cache.addAll(urlsToCache);
+            })
+            .then(function () {
+                console.log('Preloaded and cached URLs:');
+                return Promise.all(urlsToCache.map(url => {
+                    return cache.match(url).then(response => {
+                        console.log('- ' + url);
+                        return response;
+                    });
+                }));
             })
     );
 });
 
-// Fetch the resources from the cache, and fall back to network if not available
-self.addEventListener('fetch', event => {
+// Fetch event
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
-            .then(response => {
+            .then(function (response) {
                 // Cache hit - return response
                 if (response) {
                     return response;
                 }
-                // Cache miss - fetch from network
-                return fetch(event.request);
-            }
-            )
+
+                // Clone the request
+                const fetchRequest = event.request.clone();
+
+                return fetch(fetchRequest).then(
+                    function (response) {
+                        // Check if we received a valid response
+                        if (!response || response.status !== 200 || response.type !== 'basic') {
+                            return response;
+                        }
+
+                        // Clone the response
+                        const responseToCache = response.clone();
+
+                        // Open the cache and add the response
+                        caches.open(CACHE_NAME)
+                            .then(function (cache) {
+                                cache.put(event.request, responseToCache);
+                            });
+
+                        return response;
+                    }
+                );
+            })
     );
 });
 
-// Activate the new service worker and delete old caches if needed
-self.addEventListener('activate', event => {
+// Activate event
+self.addEventListener('activate', function (event) {
     const cacheWhitelist = [CACHE_NAME];
+
     event.waitUntil(
-        caches.keys().then(cacheNames => {
+        caches.keys().then(function (cacheNames) {
             return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (!cacheWhitelist.includes(cacheName)) {
+                cacheNames.map(function (cacheName) {
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
                         return caches.delete(cacheName);
                     }
                 })
